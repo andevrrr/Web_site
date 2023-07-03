@@ -20,9 +20,9 @@ import flutter from "./tech/flutter.png";
 import java from "./tech/java.png";
 import python from "./tech/python.png";
 
-import page from "./page.png"
-import pokemon from "./pokemon.jpeg"
-import weather from "./weather.png"
+import page from "./projects/page.png"
+import pokemon from "./projects/pokemon.jpeg"
+import weather from "./projects/weather.png"
 
 
 export {
