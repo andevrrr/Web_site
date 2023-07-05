@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from '../utils/motion';
 
 import { API } from 'aws-amplify';
-import { listProjects } from './graphql/queries';
+import { listProjects } from '../graphql/queries.js';
 
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => (

@@ -2,7 +2,7 @@ import { BallCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 
 import { API } from 'aws-amplify';
-import { listTechnologies } from './graphql/queries';
+import { listTechnologies } from '../graphql/queries.js';
 
 
 const Tech = () => {

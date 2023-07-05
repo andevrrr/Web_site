@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 
 import { API } from 'aws-amplify';
-import { listServices} from './graphql/queries';
+import { listServices} from '../graphql/queries.js';
 
 
 const ServiceCard = ({ index, title, icon }) => {
