@@ -3,10 +3,13 @@ import { Tilt } from 'react-tilt'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
-import { services } from '../constants'
 import { fadeIn, textVariant } from '../utils/motion'
 
 import { SectionWrapper } from '../hoc'
+
+import { API } from 'aws-amplify';
+import { listServices} from './graphql/queries';
+
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -49,6 +52,21 @@ const ServiceCard = ({ index, title, icon }) => {
 }
 
 const About = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  async function fetchServices() {
+    try {
+      const response = await API.graphql({ query: listServices });
+      setServices(response.data.listServices);
+    } catch (error) {
+      console.error('Error fetching services:', error);
+    }
+  }
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -70,8 +88,8 @@ const About = () => {
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+        {services.map((service) => (
+          <ServiceCard key={service.title} index={index} title={service.title} icon={service.icon}  />
         ))}
       </div>
     </>

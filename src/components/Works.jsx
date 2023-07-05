@@ -4,10 +4,14 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = ({index, name, description, tags, image, source_code_link}) => (
+import { API } from 'aws-amplify';
+import { listProjects } from './graphql/queries';
+
+
+const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => (
+
   <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
     <Tilt
       glareEnable={true}
@@ -18,7 +22,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
       className="bg-tertiary p-5 rounded-2xl sm:w-[500px] w-full"
     >
       <div className="relative w-full h-[230px]">
-        <img 
+        <img
           src={image}
           alt={name}
           className="w-full h-full object-cover rounded-2xl"
@@ -42,8 +46,8 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
         <p className="mt-2 text-secondary text-[14px]">{description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p key={tag.name} 
-            className={`text-[14px] ${tag.color}`}>
+            <p key={tag.name}
+              className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
@@ -54,6 +58,23 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
 )
 
 const Works = () => {
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  async function fetchProjects() {
+    try {
+      const response = await API.graphql({ query: listProjects });
+      setProjects(response.data.listProjects);
+    } catch (error) {
+      console.error('Error fetching services:', error);
+    }
+  }
+
+
   return (
     <>
       <motion.div variants={textVariant()} >
@@ -67,25 +88,25 @@ const Works = () => {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Hi there
-        Anton's here
-        I am a second year student of Tampere University of Applied SciencesI major in software engineering.
-        I've been identifying myself as a full-stack developer for a year now,
-        though i also studied web development in high school.
-        Mostly i do frontend job and i am more experienced in it than in backend.
-        By the way, you can move this terminal and the picture window
-        by dragging the topbars.
-        Creating web pages is always fun for me.
-        With the related technologies you can create whatever you desire
-        and I find that a kind of brainstorming exercises.
-        Keep scrolling the page to get to know more about me!
+          Anton's here
+          I am a second year student of Tampere University of Applied SciencesI major in software engineering.
+          I've been identifying myself as a full-stack developer for a year now,
+          though i also studied web development in high school.
+          Mostly i do frontend job and i am more experienced in it than in backend.
+          By the way, you can move this terminal and the picture window
+          by dragging the topbars.
+          Creating web pages is always fun for me.
+          With the related technologies you can create whatever you desire
+          and I find that a kind of brainstorming exercises.
+          Keep scrolling the page to get to know more about me!
         </motion.p>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
-          <ProjectCard 
+          <ProjectCard
             key={`project-${index}`}
-            index = {index}
+            index={index}
             {...project}
           />
         ))}
