@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom"
 
-import Amplify from "aws-amplify";
+import { Amplify } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
