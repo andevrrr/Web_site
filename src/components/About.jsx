@@ -8,43 +8,43 @@ import { fadeIn, textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 
 import { API } from 'aws-amplify';
-import { listServices} from '../graphql/queries.js';
+import { listServices } from '../graphql/queries.js';
 
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-<Tilt className="xs:w-[250px] w-full">
-  <motion.div
-    variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-    className='w-full rounded-lg shadow-card py-5'
-    style={{
-      background: 'linear-gradient(to bottom, #392f5a, #5c258d)',
-      boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
-      overflow: 'hidden',
-    }}
-  >
-    <div
-      options={{
-        max: 20,
-        scale: 1.05,
-        speed: 500
-      }}
-      className='h-full flex justify-center items-center flex-col text-center'
-    >
-      <span
-        role="img"
-        aria-label={title}
-        className="text-6xl text-white mb-4"
+    <Tilt className="xs:w-[250px] w-full">
+      <motion.div
+        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        className='w-full rounded-lg shadow-card py-5'
         style={{
-          textShadow: '0px 0px 10px rgba(255, 255, 255, 0.8)',
+          background: 'linear-gradient(to bottom, #392f5a, #5c258d)',
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
+          overflow: 'hidden',
         }}
       >
-        {icon}
-      </span>
-      <h3 className='text-white text-[20px] font-bold'>{title}</h3>
-    </div>
-  </motion.div>
-</Tilt>
+        <div
+          options={{
+            max: 20,
+            scale: 1.05,
+            speed: 500
+          }}
+          className='h-full flex justify-center items-center flex-col text-center'
+        >
+          <span
+            role="img"
+            aria-label={title}
+            className="text-6xl text-white mb-4"
+            style={{
+              textShadow: '0px 0px 10px rgba(255, 255, 255, 0.8)',
+            }}
+          >
+            {icon}
+          </span>
+          <h3 className='text-white text-[20px] font-bold'>{title}</h3>
+        </div>
+      </motion.div>
+    </Tilt>
 
 
 
@@ -61,7 +61,7 @@ const About = () => {
   async function fetchServices() {
     try {
       const response = await API.graphql({ query: listServices });
-      setServices(response.data.listServices);
+      setServices(response.data.listServices.items);
     } catch (error) {
       console.error('Error fetching services:', error);
     }
@@ -88,9 +88,10 @@ const About = () => {
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
-        {services.map((service) => (
-          <ServiceCard key={service.title} index={index} title={service.title} icon={service.icon}  />
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} title={service.title} icon={service.icon} />
         ))}
+
       </div>
     </>
   )

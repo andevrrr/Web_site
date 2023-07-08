@@ -16,7 +16,8 @@ const Tech = () => {
   async function fetchTechnologies() {
     try {
       const response = await API.graphql({ query: listTechnologies });
-      setTechnologies(response.data.listTechnologies);
+      console.log('Response:', response);  
+      setTechnologies(response.data.listTechnologies.items); 
     } catch (error) {
       console.error('Error fetching technologies:', error);
     }

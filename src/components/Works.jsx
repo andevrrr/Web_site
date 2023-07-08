@@ -69,11 +69,13 @@ const Works = () => {
   async function fetchProjects() {
     try {
       const response = await API.graphql({ query: listProjects });
-      setProjects(response.data.listProjects);
+      console.log('Response:', response); 
+      setProjects(response.data.listProjects.items);  
     } catch (error) {
       console.error('Error fetching services:', error);
     }
   }
+  
 
 
   return (
