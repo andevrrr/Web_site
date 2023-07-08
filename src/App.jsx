@@ -1,6 +1,9 @@
 import { BrowserRouter } from "react-router-dom"
 
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
 
+Amplify.configure(awsconfig);
 
 import { About, Contact, Hero, Navbar, Tech, Works, Footer } from './components';
 
