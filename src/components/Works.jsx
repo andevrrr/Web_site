@@ -12,7 +12,7 @@ import { listProjects } from '../graphql/queries.js';
 
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => (
-
+  console.log(tags),
   <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
     <Tilt
       glareEnable={true}
