@@ -9,6 +9,8 @@ type Project @model {
   name: String!
   source_code_link: String!
   tags: [Tag] @hasMany(fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Service @model {
@@ -24,10 +26,15 @@ type Tag @model {
   id: ID!
   name: String!
   project: Project @belongsTo
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Technology @model {
   icon: String!
   id: ID!
   name: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
+
