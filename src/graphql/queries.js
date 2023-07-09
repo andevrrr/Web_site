@@ -32,6 +32,13 @@ export const listProjects = /* GraphQL */ `
         image
         name
         source_code_link
+        tags {
+          items {
+            color
+            id
+            name
+          }
+        }
         createdAt
         updatedAt
         __typename
@@ -41,6 +48,7 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
+
 export const getService = /* GraphQL */ `
   query GetService($id: ID!) {
     getService(id: $id) {
