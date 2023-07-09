@@ -70,9 +70,9 @@ export const createService = /* GraphQL */ `
     $condition: ModelServiceConditionInput
   ) {
     createService(input: $input, condition: $condition) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
@@ -85,9 +85,9 @@ export const updateService = /* GraphQL */ `
     $condition: ModelServiceConditionInput
   ) {
     updateService(input: $input, condition: $condition) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
@@ -100,9 +100,9 @@ export const deleteService = /* GraphQL */ `
     $condition: ModelServiceConditionInput
   ) {
     deleteService(input: $input, condition: $condition) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename

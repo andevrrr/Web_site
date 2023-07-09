@@ -44,9 +44,9 @@ export const listProjects = /* GraphQL */ `
 export const getService = /* GraphQL */ `
   query GetService($id: ID!) {
     getService(id: $id) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
@@ -61,9 +61,9 @@ export const listServices = /* GraphQL */ `
   ) {
     listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        icon
         id
         title
+        icon
         createdAt
         updatedAt
         __typename

@@ -12,9 +12,11 @@ type Project @model {
 }
 
 type Service @model {
-  icon: String!
   id: ID!
-  title: String!
+  title: String
+  icon: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Tag @model {

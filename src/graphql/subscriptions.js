@@ -58,9 +58,9 @@ export const onDeleteProject = /* GraphQL */ `
 export const onCreateService = /* GraphQL */ `
   subscription OnCreateService($filter: ModelSubscriptionServiceFilterInput) {
     onCreateService(filter: $filter) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
@@ -70,9 +70,9 @@ export const onCreateService = /* GraphQL */ `
 export const onUpdateService = /* GraphQL */ `
   subscription OnUpdateService($filter: ModelSubscriptionServiceFilterInput) {
     onUpdateService(filter: $filter) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
@@ -82,9 +82,9 @@ export const onUpdateService = /* GraphQL */ `
 export const onDeleteService = /* GraphQL */ `
   subscription OnDeleteService($filter: ModelSubscriptionServiceFilterInput) {
     onDeleteService(filter: $filter) {
-      icon
       id
       title
+      icon
       createdAt
       updatedAt
       __typename
