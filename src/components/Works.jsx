@@ -7,8 +7,8 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from '../utils/motion';
 
-// import { API } from 'aws-amplify';
-// import { listProjects } from '../graphql/queries.js';
+import { API } from 'aws-amplify';
+import { listProjects } from '../graphql/queries.js';
 
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => (
@@ -60,21 +60,21 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 
 const Works = () => {
 
-  // const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
-  // useEffect(() => {
-  //   fetchProjects();
-  // }, []);
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
-  // async function fetchProjects() {
-  //   try {
-  //     const response = await API.graphql({ query: listProjects });
-  //     console.log('Response:', response); 
-  //     setProjects(response.data.listProjects.items);  
-  //   } catch (error) {
-  //     console.error('Error fetching services:', error);
-  //   }
-  // }
+  async function fetchProjects() {
+    try {
+      const response = await API.graphql({ query: listProjects });
+      console.log('Response:', response); 
+      setProjects(response.data.listProjects.items);  
+    } catch (error) {
+      console.error('Error fetching services:', error);
+    }
+  }
   
 
 
@@ -105,7 +105,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* <div className="mt-20 flex flex-wrap gap-7 justify-center">
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}
@@ -113,7 +113,7 @@ const Works = () => {
             {...project}
           />
         ))}
-      </div> */}
+      </div>
     </>
   )
 }
