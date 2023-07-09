@@ -61,6 +61,7 @@ const About = () => {
   async function fetchServices() {
     try {
       const response = await API.graphql({ query: listServices });
+      console.log('Response:', response); 
       setServices(response.data.listServices.items);
     } catch (error) {
       console.error('Error fetching services:', error);
