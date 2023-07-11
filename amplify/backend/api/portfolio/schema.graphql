@@ -3,12 +3,13 @@
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 type Project @model {
-  description: String!
   id: ID!
-  image: String!
+  projectId: ID!
   name: String!
+  description: String!
+  image: String!
   source_code_link: String!
-  tags: [Tag] @hasMany(fields: ["id"])
+  tags: [Tag] @hasMany(fields: ["projectId"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -22,10 +23,11 @@ type Service @model {
 }
 
 type Tag @model {
-  color: String!
   id: ID!
   name: String!
-  project: Project @belongsTo
+  color: String!
+  projectId: ID!
+  project: Project @belongsTo(fields: ["projectId"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

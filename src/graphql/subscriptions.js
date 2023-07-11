@@ -4,10 +4,11 @@
 export const onCreateProject = /* GraphQL */ `
   subscription OnCreateProject($filter: ModelSubscriptionProjectFilterInput) {
     onCreateProject(filter: $filter) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -22,10 +23,11 @@ export const onCreateProject = /* GraphQL */ `
 export const onUpdateProject = /* GraphQL */ `
   subscription OnUpdateProject($filter: ModelSubscriptionProjectFilterInput) {
     onUpdateProject(filter: $filter) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -40,10 +42,11 @@ export const onUpdateProject = /* GraphQL */ `
 export const onDeleteProject = /* GraphQL */ `
   subscription OnDeleteProject($filter: ModelSubscriptionProjectFilterInput) {
     onDeleteProject(filter: $filter) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -94,14 +97,16 @@ export const onDeleteService = /* GraphQL */ `
 export const onCreateTag = /* GraphQL */ `
   subscription OnCreateTag($filter: ModelSubscriptionTagFilterInput) {
     onCreateTag(filter: $filter) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt
@@ -116,14 +121,16 @@ export const onCreateTag = /* GraphQL */ `
 export const onUpdateTag = /* GraphQL */ `
   subscription OnUpdateTag($filter: ModelSubscriptionTagFilterInput) {
     onUpdateTag(filter: $filter) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt
@@ -138,14 +145,16 @@ export const onUpdateTag = /* GraphQL */ `
 export const onDeleteTag = /* GraphQL */ `
   subscription OnDeleteTag($filter: ModelSubscriptionTagFilterInput) {
     onDeleteTag(filter: $filter) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt

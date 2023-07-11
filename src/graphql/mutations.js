@@ -7,10 +7,11 @@ export const createProject = /* GraphQL */ `
     $condition: ModelProjectConditionInput
   ) {
     createProject(input: $input, condition: $condition) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -28,10 +29,11 @@ export const updateProject = /* GraphQL */ `
     $condition: ModelProjectConditionInput
   ) {
     updateProject(input: $input, condition: $condition) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -49,10 +51,11 @@ export const deleteProject = /* GraphQL */ `
     $condition: ModelProjectConditionInput
   ) {
     deleteProject(input: $input, condition: $condition) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -115,14 +118,16 @@ export const createTag = /* GraphQL */ `
     $condition: ModelTagConditionInput
   ) {
     createTag(input: $input, condition: $condition) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt
@@ -140,14 +145,16 @@ export const updateTag = /* GraphQL */ `
     $condition: ModelTagConditionInput
   ) {
     updateTag(input: $input, condition: $condition) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt
@@ -165,14 +172,16 @@ export const deleteTag = /* GraphQL */ `
     $condition: ModelTagConditionInput
   ) {
     deleteTag(input: $input, condition: $condition) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt

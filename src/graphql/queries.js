@@ -4,10 +4,11 @@
 export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
-      description
       id
-      image
+      projectId
       name
+      description
+      image
       source_code_link
       tags {
         nextToken
@@ -27,18 +28,12 @@ export const listProjects = /* GraphQL */ `
   ) {
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
-        tags {
-          items {
-            color
-            id
-            name
-          }
-        }
         createdAt
         updatedAt
         __typename
@@ -48,7 +43,6 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
-
 export const getService = /* GraphQL */ `
   query GetService($id: ID!) {
     getService(id: $id) {
@@ -84,14 +78,16 @@ export const listServices = /* GraphQL */ `
 export const getTag = /* GraphQL */ `
   query GetTag($id: ID!) {
     getTag(id: $id) {
-      color
       id
       name
+      color
+      projectId
       project {
-        description
         id
-        image
+        projectId
         name
+        description
+        image
         source_code_link
         createdAt
         updatedAt
@@ -111,9 +107,10 @@ export const listTags = /* GraphQL */ `
   ) {
     listTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        color
         id
         name
+        color
+        projectId
         createdAt
         updatedAt
         __typename
