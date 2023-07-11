@@ -9,15 +9,7 @@ type Project @model {
   description: String!
   image: String!
   source_code_link: String!
-  tags: [Tag] @hasMany(fields: ["projectId"])
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-}
-
-type Service @model {
-  id: ID!
-  title: String
-  icon: String
+  tags: [Tag] @hasMany(fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -28,6 +20,14 @@ type Tag @model {
   color: String!
   projectId: ID!
   project: Project @belongsTo(fields: ["projectId"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Service @model {
+  id: ID!
+  title: String
+  icon: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

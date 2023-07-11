@@ -2,23 +2,30 @@
 // this is an auto generated file. This will be overwritten
 
 export const getProject = /* GraphQL */ `
-  query GetProject($id: ID!) {
-    getProject(id: $id) {
-      id
-      projectId
-      name
-      description
-      image
-      source_code_link
-      tags {
-        nextToken
-        __typename
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    projectId
+    name
+    description
+    image
+    source_code_link
+    tags {
+      items {
+        id
+        projectId
+        color
+        name
       }
-      createdAt
-      updatedAt
+      nextToken
       __typename
     }
+    createdAt
+    updatedAt
+    __typename
   }
+}
+
 `;
 export const listProjects = /* GraphQL */ `
   query ListProjects(
