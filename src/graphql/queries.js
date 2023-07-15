@@ -32,6 +32,13 @@ export const listProjects = /* GraphQL */ `
         description
         image
         source_code_link
+        tags {
+          items {
+            color
+            id
+            name
+          }
+        }
         createdAt
         updatedAt
         __typename
