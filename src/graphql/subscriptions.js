@@ -5,7 +5,6 @@ export const onCreateProject = /* GraphQL */ `
   subscription OnCreateProject($filter: ModelSubscriptionProjectFilterInput) {
     onCreateProject(filter: $filter) {
       id
-      projectId
       name
       description
       image
@@ -24,7 +23,6 @@ export const onUpdateProject = /* GraphQL */ `
   subscription OnUpdateProject($filter: ModelSubscriptionProjectFilterInput) {
     onUpdateProject(filter: $filter) {
       id
-      projectId
       name
       description
       image
@@ -43,13 +41,81 @@ export const onDeleteProject = /* GraphQL */ `
   subscription OnDeleteProject($filter: ModelSubscriptionProjectFilterInput) {
     onDeleteProject(filter: $filter) {
       id
-      projectId
       name
       description
       image
       source_code_link
       tags {
         nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateTag = /* GraphQL */ `
+  subscription OnCreateTag($filter: ModelSubscriptionTagFilterInput) {
+    onCreateTag(filter: $filter) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateTag = /* GraphQL */ `
+  subscription OnUpdateTag($filter: ModelSubscriptionTagFilterInput) {
+    onUpdateTag(filter: $filter) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteTag = /* GraphQL */ `
+  subscription OnDeleteTag($filter: ModelSubscriptionTagFilterInput) {
+    onDeleteTag(filter: $filter) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -88,78 +154,6 @@ export const onDeleteService = /* GraphQL */ `
       id
       title
       icon
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onCreateTag = /* GraphQL */ `
-  subscription OnCreateTag($filter: ModelSubscriptionTagFilterInput) {
-    onCreateTag(filter: $filter) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateTag = /* GraphQL */ `
-  subscription OnUpdateTag($filter: ModelSubscriptionTagFilterInput) {
-    onUpdateTag(filter: $filter) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteTag = /* GraphQL */ `
-  subscription OnDeleteTag($filter: ModelSubscriptionTagFilterInput) {
-    onDeleteTag(filter: $filter) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
       __typename

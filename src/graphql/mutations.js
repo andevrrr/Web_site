@@ -8,7 +8,6 @@ export const createProject = /* GraphQL */ `
   ) {
     createProject(input: $input, condition: $condition) {
       id
-      projectId
       name
       description
       image
@@ -30,7 +29,6 @@ export const updateProject = /* GraphQL */ `
   ) {
     updateProject(input: $input, condition: $condition) {
       id
-      projectId
       name
       description
       image
@@ -52,13 +50,90 @@ export const deleteProject = /* GraphQL */ `
   ) {
     deleteProject(input: $input, condition: $condition) {
       id
-      projectId
       name
       description
       image
       source_code_link
       tags {
         nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createTag = /* GraphQL */ `
+  mutation CreateTag(
+    $input: CreateTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    createTag(input: $input, condition: $condition) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateTag = /* GraphQL */ `
+  mutation UpdateTag(
+    $input: UpdateTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    updateTag(input: $input, condition: $condition) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteTag = /* GraphQL */ `
+  mutation DeleteTag(
+    $input: DeleteTagInput!
+    $condition: ModelTagConditionInput
+  ) {
+    deleteTag(input: $input, condition: $condition) {
+      id
+      name
+      color
+      projectId
+      project {
+        id
+        name
+        description
+        image
+        source_code_link
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -106,87 +181,6 @@ export const deleteService = /* GraphQL */ `
       id
       title
       icon
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const createTag = /* GraphQL */ `
-  mutation CreateTag(
-    $input: CreateTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    createTag(input: $input, condition: $condition) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateTag = /* GraphQL */ `
-  mutation UpdateTag(
-    $input: UpdateTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    updateTag(input: $input, condition: $condition) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteTag = /* GraphQL */ `
-  mutation DeleteTag(
-    $input: DeleteTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    deleteTag(input: $input, condition: $condition) {
-      id
-      name
-      color
-      projectId
-      project {
-        id
-        projectId
-        name
-        description
-        image
-        source_code_link
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
       __typename
