@@ -5,7 +5,7 @@ export const getProject = /* GraphQL */ `
  query GetProject($id: ID!) {
    getProject(id: $id) {
      id
-     projectId
+     projectId // Change this to the new field name if it's different
      name
      description
      image
@@ -13,7 +13,7 @@ export const getProject = /* GraphQL */ `
      tags {
        items {
          id
-         projectId
+         projectId // Change this to the new field name if it's different
          color
          name
        }
@@ -43,6 +43,7 @@ export const listProjects = /* GraphQL */ `
           items {
             color
             id
+            projectId // Change this to the new field name if it's different
             name
           }
         }
@@ -61,7 +62,7 @@ export const getTag = /* GraphQL */ `
       id
       name
       color
-      projectId
+      projectId // Change this to the new field name if it's different
       project {
         id
         name
@@ -89,7 +90,7 @@ export const listTags = /* GraphQL */ `
         id
         name
         color
-        projectId
+        projectId // Change this to the new field name if it's different
         createdAt
         updatedAt
         __typename
