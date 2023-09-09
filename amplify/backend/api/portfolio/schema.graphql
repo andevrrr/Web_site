@@ -9,6 +9,7 @@ type Project @model {
   description: String!
   image: String!
   source_code_link: String!
+  projectId: ID!
   tags: [Tag] @hasMany(fields: ["projectId"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
