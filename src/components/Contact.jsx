@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xgejnyzy");
