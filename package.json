@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^4.6.5",
     "@emailjs/browser": "^3.11.0",
+    "@formspree/react": "^2.5.1",
     "@react-three/drei": "^9.78.1",
     "@react-three/fiber": "^8.13.4",
     "aws-amplify": "^5.3.10",
