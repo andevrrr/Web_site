@@ -12,7 +12,14 @@ export const createProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -33,7 +40,14 @@ export const updateProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -54,7 +68,14 @@ export const deleteProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -80,6 +101,7 @@ export const createTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -106,6 +128,7 @@ export const updateTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -132,6 +155,7 @@ export const deleteTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -226,6 +250,54 @@ export const deleteTechnology = /* GraphQL */ `
       icon
       id
       name
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createContactSubmission = /* GraphQL */ `
+  mutation CreateContactSubmission(
+    $input: CreateContactSubmissionInput!
+    $condition: ModelContactSubmissionConditionInput
+  ) {
+    createContactSubmission(input: $input, condition: $condition) {
+      id
+      name
+      email
+      message
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateContactSubmission = /* GraphQL */ `
+  mutation UpdateContactSubmission(
+    $input: UpdateContactSubmissionInput!
+    $condition: ModelContactSubmissionConditionInput
+  ) {
+    updateContactSubmission(input: $input, condition: $condition) {
+      id
+      name
+      email
+      message
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteContactSubmission = /* GraphQL */ `
+  mutation DeleteContactSubmission(
+    $input: DeleteContactSubmissionInput!
+    $condition: ModelContactSubmissionConditionInput
+  ) {
+    deleteContactSubmission(input: $input, condition: $condition) {
+      id
+      name
+      email
+      message
       createdAt
       updatedAt
       __typename

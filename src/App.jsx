@@ -4,7 +4,8 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
-
+import { AmplifyProvider } from '@aws-amplify/ui-react'
+import '@aws-amplify/ui-react/styles.css'
 import { About, Contact, Hero, Navbar, Tech, Works, Footer } from './components';
 
 const App = () => {
@@ -19,7 +20,9 @@ const App = () => {
         <Tech />
         <Works />
         <div className="relative z-0">
-          <Contact />
+        <AmplifyProvider>
+			<Contact />
+		</AmplifyProvider>
         </div>
         <Footer />
       </div>

@@ -9,7 +9,14 @@ export const onCreateProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -27,7 +34,14 @@ export const onUpdateProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -45,7 +59,14 @@ export const onDeleteProject = /* GraphQL */ `
       description
       image
       source_code_link
+      projectId
       tags {
+        items {
+          id
+          projectId
+          color
+          name
+        }
         nextToken
         __typename
       }
@@ -68,6 +89,7 @@ export const onCreateTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -91,6 +113,7 @@ export const onUpdateTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -114,6 +137,7 @@ export const onDeleteTag = /* GraphQL */ `
         description
         image
         source_code_link
+        projectId
         createdAt
         updatedAt
         __typename
@@ -196,6 +220,51 @@ export const onDeleteTechnology = /* GraphQL */ `
       icon
       id
       name
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateContactSubmission = /* GraphQL */ `
+  subscription OnCreateContactSubmission(
+    $filter: ModelSubscriptionContactSubmissionFilterInput
+  ) {
+    onCreateContactSubmission(filter: $filter) {
+      id
+      name
+      email
+      message
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateContactSubmission = /* GraphQL */ `
+  subscription OnUpdateContactSubmission(
+    $filter: ModelSubscriptionContactSubmissionFilterInput
+  ) {
+    onUpdateContactSubmission(filter: $filter) {
+      id
+      name
+      email
+      message
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteContactSubmission = /* GraphQL */ `
+  subscription OnDeleteContactSubmission(
+    $filter: ModelSubscriptionContactSubmissionFilterInput
+  ) {
+    onDeleteContactSubmission(filter: $filter) {
+      id
+      name
+      email
+      message
       createdAt
       updatedAt
       __typename

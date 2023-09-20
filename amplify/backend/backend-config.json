@@ -4,10 +4,15 @@
       "dependsOn": [],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
             },
             "authenticationType": "API_KEY"
           }
@@ -15,6 +20,49 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "function": {
+    "portfolio108a7269": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "portfolio"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_portfolio108a7269_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio108a7269"
+        }
+      ]
+    },
+    "AMPLIFY_function_portfolio108a7269_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio108a7269"
+        }
+      ]
+    },
+    "AMPLIFY_function_portfolio108a7269_sesEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolio108a7269"
+        }
+      ]
     }
   }
 }

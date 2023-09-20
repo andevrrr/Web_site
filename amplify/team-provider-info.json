@@ -14,6 +14,13 @@
     "categories": {
       "api": {
         "portfolio": {}
+      },
+      "function": {
+        "portfolio108a7269": {
+          "deploymentBucketName": "amplify-portfolio-dev-105252-deployment",
+          "s3Key": "amplify-builds/portfolio108a7269-596748337539386f6852-build.zip",
+          "sesEmail": "ak@antonkucherenko.com"
+        }
       }
     }
   }
