@@ -29,7 +29,7 @@ const Contact = () => {
 
         {/* @formspree/react form */}
         <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <label className="flex flex-col">
+          {/* <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
               type="text"
@@ -37,24 +37,36 @@ const Contact = () => {
               placeholder="What's your good name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
-          </label>
-          <label className="flex flex-col">
+          </label> */}
+          <label className="flex flex-col" htmlFor="email">
             <span className="text-white font-medium mb-4">Your email</span>
-            <input
+            <input 
+               id="email"
               type="email"
               name="email"
               placeholder="What's your web address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
+            id="message"
               rows={7}
               name="message"
               placeholder="What you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            <ValidationError 
+        prefix="Message" 
+        field="message"
+        errors={state.errors}
+      />
           </label>
 
           <button
