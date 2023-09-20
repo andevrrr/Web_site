@@ -11,7 +11,7 @@ export const onCreateProject = /* GraphQL */ `
       source_code_link
       projectId
       tags {
-        items {
+        tems {
           id
           projectId
           color
@@ -36,7 +36,7 @@ export const onUpdateProject = /* GraphQL */ `
       source_code_link
       projectId
       tags {
-        items {
+        tems {
           id
           projectId
           color
@@ -61,7 +61,7 @@ export const onDeleteProject = /* GraphQL */ `
       source_code_link
       projectId
       tags {
-        items {
+        tems {
           id
           projectId
           color
@@ -220,51 +220,6 @@ export const onDeleteTechnology = /* GraphQL */ `
       icon
       id
       name
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onCreateContactSubmission = /* GraphQL */ `
-  subscription OnCreateContactSubmission(
-    $filter: ModelSubscriptionContactSubmissionFilterInput
-  ) {
-    onCreateContactSubmission(filter: $filter) {
-      id
-      name
-      email
-      message
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateContactSubmission = /* GraphQL */ `
-  subscription OnUpdateContactSubmission(
-    $filter: ModelSubscriptionContactSubmissionFilterInput
-  ) {
-    onUpdateContactSubmission(filter: $filter) {
-      id
-      name
-      email
-      message
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteContactSubmission = /* GraphQL */ `
-  subscription OnDeleteContactSubmission(
-    $filter: ModelSubscriptionContactSubmissionFilterInput
-  ) {
-    onDeleteContactSubmission(filter: $filter) {
-      id
-      name
-      email
-      message
       createdAt
       updatedAt
       __typename

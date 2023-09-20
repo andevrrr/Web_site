@@ -22,47 +22,5 @@
       "service": "AppSync"
     }
   },
-  "function": {
-    "portfolio108a7269": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
-          ],
-          "category": "api",
-          "resourceName": "portfolio"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_portfolio108a7269_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "portfolio108a7269"
-        }
-      ]
-    },
-    "AMPLIFY_function_portfolio108a7269_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "portfolio108a7269"
-        }
-      ]
-    },
-    "AMPLIFY_function_portfolio108a7269_sesEmail": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "portfolio108a7269"
-        }
-      ]
-    }
-  }
+  "function": {}
 }

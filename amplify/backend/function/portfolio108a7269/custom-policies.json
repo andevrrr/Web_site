@@ -1,7 +1,0 @@
-[
-  {
-    "Action": ["ses:SendEmail"],
-    "Effect": "Allow",
-    "Resource": ["arn:aws:ses:eu-north-1:142924874610:identity/ak@antonkucherenko.com"]
-  }
-]

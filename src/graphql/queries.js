@@ -11,7 +11,7 @@ export const getProject = /* GraphQL */ `
       source_code_link
       projectId
       tags {
-        items {
+        tems {
           id
           projectId
           color
@@ -157,44 +157,6 @@ export const listTechnologies = /* GraphQL */ `
         icon
         id
         name
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const getContactSubmission = /* GraphQL */ `
-  query GetContactSubmission($id: ID!) {
-    getContactSubmission(id: $id) {
-      id
-      name
-      email
-      message
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listContactSubmissions = /* GraphQL */ `
-  query ListContactSubmissions(
-    $filter: ModelContactSubmissionFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listContactSubmissions(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        name
-        email
-        message
         createdAt
         updatedAt
         __typename
