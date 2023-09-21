@@ -167,7 +167,7 @@ const Hero = ({ isMobile }) => {
       ))}
       <Button position={[0, -1, 2.5]} link="https://github.com/andevrrr" imagePath="./github.png"  isMobile={isMobile} />
       <Button position={[0, -1, 1.3]} link="https://www.linkedin.com/in/antonkuch/" imagePath="./linkedin.png" isMobile={isMobile} />
-      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/3xH5mHdVu_Gray_and_Black_Professional_Resume" imagePath="./cv.png" isMobile={isMobile} />
+      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/SAYiShJFP_cv_anton_kucherenko" imagePath="./cv.png" isMobile={isMobile} />
     </mesh>
   );
 };

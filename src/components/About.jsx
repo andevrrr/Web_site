@@ -79,7 +79,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I am currently a second-year student at Tampere University of Applied Sciences, where I am pursuing my passion for software engineering.
+        I am currently a third-year student at Tampere University of Applied Sciences, where I am pursuing my passion for software engineering.
 
         As a full-stack developer, I have experience working with a variety of technologies and frameworks, including React, Three.js, Node.js, Express, and Vite. I work with both relational databases such as MySQL and PostgreSQL, as well as NoSQL databases like MongoDB and Firebase. Additionally, I am actively learning and expanding my skills in AWS and Docker.
 

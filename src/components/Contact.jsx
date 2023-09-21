@@ -11,7 +11,7 @@ const Contact = () => {
   if (state.succeeded) {
     return (
       <div>
-        <p>Thanks for your message. I will reply to you shortly!</p>
+        <p>Thank you for the message. I will reply to you shortly!</p>
       </div>
     );
   }
@@ -25,6 +25,12 @@ const Contact = () => {
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
+        <br />
+        <p className="text-white font-lightm mb-4" >Anton Kucherenko</p>
+        <a href = "mailto:ak@anton-kucherenko.com" className="text-white font-light mb-4 text-decoration-none" >ak@anton-kucherenko.com</a>
+        <a href="tel:+358451694688" className="text-white font-light mb-4 text-decoration-none" >+358 45 169 4688</a>
+        <p className="text-white font-light mb-4" >Hämeenkatu 11 A 711, Tampere, Finland</p>
+        <br />
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         {/* @formspree/react form */}
@@ -44,7 +50,7 @@ const Contact = () => {
                id="email"
               type="email"
               name="email"
-              placeholder="What's your web address?"
+              placeholder="What's your email address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
             <ValidationError 

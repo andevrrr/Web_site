@@ -90,18 +90,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Hi there
-          Anton's here
-          I am a second year student of Tampere University of Applied SciencesI major in software engineering.
-          I've been identifying myself as a full-stack developer for a year now,
-          though i also studied web development in high school.
-          Mostly i do frontend job and i am more experienced in it than in backend.
-          By the way, you can move this terminal and the picture window
-          by dragging the topbars.
-          Creating web pages is always fun for me.
-          With the related technologies you can create whatever you desire
-          and I find that a kind of brainstorming exercises.
-          Keep scrolling the page to get to know more about me!
+          Hello there! Below, you'll find a collection of my recent projects. While they may not be the most groundbreaking, I'm genuinely excited about the solutions they offer. And hey, there's plenty more over on my GitHub. I've worked on everything from backend and frontend to mobile development.
+
+Sometimes, I share code that I think might come in handy for others. It's my small way of giving back to the developer community. These projects reflect my ongoing journey in the world of coding, and I'd love for you to take a look. Who knows, you might find something useful or even spot areas where I can improve. Let's keep the code flowing! 🚀👨‍💻
         </motion.p>
       </div>
 
