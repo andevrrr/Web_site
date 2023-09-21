@@ -28,6 +28,7 @@ const Contact = () => {
         <br />
         <p className="text-white font-lightm mb-4" >Anton Kucherenko</p>
         <a href = "mailto:ak@anton-kucherenko.com" className="text-white font-light mb-4 text-decoration-none" >ak@anton-kucherenko.com</a>
+        <br />
         <a href="tel:+358451694688" className="text-white font-light mb-4 text-decoration-none" >+358 45 169 4688</a>
         <p className="text-white font-light mb-4" >Hämeenkatu 11 A 711, Tampere, Finland</p>
         <br />
