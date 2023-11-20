@@ -32,7 +32,7 @@ const Button = ({ position, link, imagePath, isMobile }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const texture = useLoader(TextureLoader, imagePath);
-  texture.flipY = false; 
+  texture.flipY = false;
 
   useEffect(() => {
     const raycaster = new THREE.Raycaster();
@@ -87,7 +87,7 @@ const Button = ({ position, link, imagePath, isMobile }) => {
 
   const materials = [
     new THREE.MeshBasicMaterial({ color: "white" }), // side // top
-    new THREE.MeshBasicMaterial({ color: "white" }), 
+    new THREE.MeshBasicMaterial({ color: "white" }),
     new THREE.MeshBasicMaterial({ map: texture, transparent: true }),// bottom
   ]
 
@@ -167,7 +167,7 @@ const Hero = ({ isMobile }) => {
       ))}
       <Button position={[0, -1, 2.5]} link="https://github.com/andevrrr" imagePath="./github.png"  isMobile={isMobile} />
       <Button position={[0, -1, 1.3]} link="https://www.linkedin.com/in/antonkuch/" imagePath="./linkedin.png" isMobile={isMobile} />
-      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/SAYiShJFP_cv_anton_kucherenko" imagePath="./cv.png" isMobile={isMobile} />
+      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/NEZZusw6Q_cv_anton_kucherenko" imagePath="./cv.png" isMobile={isMobile} />
     </mesh>
   );
 };
