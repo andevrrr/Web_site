@@ -1,19 +1,15 @@
 {
   "api": {
-    "portfolio": {
+    "personal": {
       "dependsOn": [],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2025-07-21T13:34:29.527Z",
+              "apiKeyExpirationDate": "2025-07-21T14:22:46.792Z",
               "apiKeyExpirationDays": 365,
-              "description": "api key description"
+              "description": ""
             },
             "authenticationType": "API_KEY"
           }
@@ -22,6 +18,5 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     }
-  },
-  "function": {}
+  }
 }

@@ -35,4 +35,5 @@ type Technology @model @auth(rules: [{allow: public}]) {
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
- 
+
+
