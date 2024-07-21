@@ -167,9 +167,9 @@ const Hero = ({ isMobile }) => {
       ))}
       <Button position={[0, -1, 2.5]} link="https://github.com/andevrrr" imagePath="./github.png"  isMobile={isMobile} />
       <Button position={[0, -1, 1.3]} link="https://www.linkedin.com/in/antonkuch/" imagePath="./linkedin.png" isMobile={isMobile} />
-      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/xLa~djlBz_resume" imagePath="./cv.png" isMobile={isMobile} />
+      <Button position={[0, -1, 0.1]} link="https://pdfhost.io/v/a0esN4gvs_resume" imagePath="./cv.png" isMobile={isMobile} />
     </mesh>
-  );
+  )
 };
 
 const HeroCanvas = () => {

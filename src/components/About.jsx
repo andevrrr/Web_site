@@ -79,11 +79,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I am currently a final-year student at Tampere University of Applied Sciences, where I am pursuing my passion for software engineering.
 
-        As a full-stack developer, I have experience working with a variety of technologies and frameworks, including React, Three.js, Node.js, Express, and Vite. I work with both relational databases such as MySQL and PostgreSQL, as well as NoSQL databases like MongoDB and Firebase. Additionally, I am actively learning and expanding my skills in AWS and Docker.
+        As a full-stack developer, I have experience working with a variety of technologies and frameworks, including React, Three.js, Node.js, Express, and Vite. I work with both relational databases such as MySQL and PostgreSQL, as well as NoSQL databases like MongoDB and Firebase. Additionally, I am actively learning and expanding my skills in AWS, Docker and Kubernetes.
 
-        I am also deeply interested in mobile app development. My primary framework for cross-platform mobile app development is Flutter, which utilizes the Dart programming language. I have also worked with Swift for iOS development and Java for Android.
+        I am also deeply interested in mobile app development. My primary framework for cross-platform mobile app development is React Native. I have also worked with Swift for iOS development and Java for Android.
 
         In addition to software development, I have a strong passion for robotics. I enjoy building robots using Arduino and Raspberry Pi, and programming them to perform various tasks. I also enjoy tinkering with Raspberry Pi and exploring its capabilities.
       </motion.p>
