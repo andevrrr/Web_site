@@ -29,8 +29,8 @@ const Contact = () => {
         <p className="text-white font-lightm mb-4" >Anton Kucherenko</p>
         <a href = "mailto:ak@anton-kucherenko.com" className="text-white font-light mb-4 text-decoration-none" >ak@anton-kucherenko.com</a>
         <br />
-        <a href="tel:+358451694688" className="text-white font-light mb-4 text-decoration-none" >+358 45 169 4688</a>
-        <p className="text-white font-light mb-4" >Hämeenkatu 11 A 711, Tampere, Finland</p>
+        <a href="tel:+358451694688" className="text-white font-light mb-4 text-decoration-none" >+491633670358</a>
+        <p className="text-white font-light mb-4" >Berlin, Germany</p>
         <br />
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
@@ -47,15 +47,15 @@ const Contact = () => {
           </label> */}
           <label className="flex flex-col" htmlFor="email">
             <span className="text-white font-medium mb-4">Your email</span>
-            <input 
+            <input
                id="email"
               type="email"
               name="email"
               placeholder="What's your email address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
-            <ValidationError 
-        prefix="Email" 
+            <ValidationError
+        prefix="Email"
         field="email"
         errors={state.errors}
       />
@@ -69,8 +69,8 @@ const Contact = () => {
               placeholder="What you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
-            <ValidationError 
-        prefix="Message" 
+            <ValidationError
+        prefix="Message"
         field="message"
         errors={state.errors}
       />
