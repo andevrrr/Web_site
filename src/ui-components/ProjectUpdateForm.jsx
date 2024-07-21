@@ -7,11 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
-import { API } from "aws-amplify";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { generateClient } from "aws-amplify/api";
 import { getProject } from "../graphql/queries";
 import { updateProject } from "../graphql/mutations";
+const client = generateClient();
 export default function ProjectUpdateForm(props) {
   const {
     id: idProp,
@@ -63,8 +63,8 @@ export default function ProjectUpdateForm(props) {
     const queryData = async () => {
       const record = idProp
         ? (
-            await API.graphql({
-              query: getProject,
+            await client.graphql({
+              query: getProject.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getProject
@@ -162,8 +162,8 @@ export default function ProjectUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
-            query: updateProject,
+          await client.graphql({
+            query: updateProject.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: projectRecord.id,

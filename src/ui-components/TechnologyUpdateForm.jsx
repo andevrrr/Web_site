@@ -7,11 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
-import { API } from "aws-amplify";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { generateClient } from "aws-amplify/api";
 import { getTechnology } from "../graphql/queries";
 import { updateTechnology } from "../graphql/mutations";
+const client = generateClient();
 export default function TechnologyUpdateForm(props) {
   const {
     id: idProp,
@@ -51,8 +51,8 @@ export default function TechnologyUpdateForm(props) {
     const queryData = async () => {
       const record = idProp
         ? (
-            await API.graphql({
-              query: getTechnology,
+            await client.graphql({
+              query: getTechnology.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getTechnology
@@ -144,8 +144,8 @@ export default function TechnologyUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
-            query: updateTechnology,
+          await client.graphql({
+            query: updateTechnology.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: technologyRecord.id,

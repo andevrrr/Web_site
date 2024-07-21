@@ -7,11 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
-import { API } from "aws-amplify";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { generateClient } from "aws-amplify/api";
 import { getService } from "../graphql/queries";
 import { updateService } from "../graphql/mutations";
+const client = generateClient();
 export default function ServiceUpdateForm(props) {
   const {
     id: idProp,
@@ -50,8 +50,8 @@ export default function ServiceUpdateForm(props) {
     const queryData = async () => {
       const record = idProp
         ? (
-            await API.graphql({
-              query: getService,
+            await client.graphql({
+              query: getService.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getService
@@ -143,8 +143,8 @@ export default function ServiceUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
-            query: updateService,
+          await client.graphql({
+            query: updateService.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: serviceRecord.id,
